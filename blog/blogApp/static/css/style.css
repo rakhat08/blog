@@ -1,0 +1,115 @@
+/* === GLOBAL PAGE STYLE === */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-family: sans-serif;
+}
+
+/* Центрирование контента */
+.page-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Общий контейнер */
+.container-box {
+    background-color: #1e293b;
+    padding: 40px;
+    border-radius: 16px;
+    width: 500px;
+    max-width: 90%;
+}
+
+/* === HEADINGS === */
+h1, h2, h3, h4, h5 {
+    color: white;
+    text-align: center;
+}
+
+/* === INPUTS === */
+input, textarea, select {
+    width: 100%;
+    padding: 15px;
+    margin-top: 12px;
+    background-color: #0f172a;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Placeholder цвет */
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* === BUTTONS === */
+button, .btn-default {
+    width: 100%;
+    background-color: #3b82f6;
+    padding: 14px;
+    border: none;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+button:hover,
+.btn-default:hover {
+    background-color: #2563eb;
+}
+
+/* === LINKS === */
+a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #93c5fd;
+}
+
+/* === ARTICLE BLOCK === */
+.article-box {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+/* === COMMENT BLOCK === */
+.comment-box {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Подписи */
+label {
+    color: #cbd5e1;
+    font-size: 16px;
+}
+
+/* Разделители */
+hr {
+    border-color: #334155;
+}
+
+/* Сообщения */
+.alert {
+    margin-top: 20px;
+}

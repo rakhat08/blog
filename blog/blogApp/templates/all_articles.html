@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все статьи</title>
+    <link rel="icon" href="{% static 'images/icon.png' %}">
+<style>
+    body {
+    background-color: #20232A; /* Dark background color */
+    color: #F8F8F2; /* Light text color */
+    font-family: Arial, sans-serif;
+}
+p {
+color: white;
+}
+.navbar {
+    background-color: #282C34 !important; /* Darker navbar background */
+    border-bottom: 1px solid #3A3F47;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    color: #F8F8F2 !important; /* Light text for brand */
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.navbar-brand a {
+    color: #61DAFB !important; /* Cyan for links in navbar */
+    margin-left: 10px;
+}
+
+h1 {
+    color: #61DAFB; /* Cyan for main heading */
+    margin-bottom: 2rem;
+}
+
+.article-item {
+    background-color: #282C34; /* Darker background for article items */
+    border: 1px solid #3A3F47; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.2s ease-in-out;
+}
+
+.article-item:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.article-item a {
+    color: #F8F8F2; /* Light text for article titles */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.article-item a:hover {
+    color: #61DAFB; /* Cyan on hover for article titles */
+}
+
+.article-item span {
+    color: #ABB2BF; /* Grayish text for author */
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.container {
+    max-width: 800px; /* Constrain width for better readability */
+}
+</style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> {# Link to our custom CSS file #}
+</head>
+<body>
+<nav class="navbar navbar-light"> {# Removed bg-light to allow custom styling #}
+  <span class="navbar-brand mx-auto h1">Ink by Rakhat  <a style="text-decoration: 0" href="{% url 'my_article_list' %}">Мои статьи</a></span>
+</nav>
+<div class="container mt-5"> {# Added a container for better centering and spacing #}
+    <h1 class="text-center mb-4">Все статьи</h1> {# Centered the heading #}
+    {% for article in articles %}
+    <p class="article-item"><a href="{% url 'full_article' article.id %}" class="link-underline-success">{{article.title}}</a> Автор:{{article.author}}</p>
+    {%endfor%}
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Удаление статьи</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <p>Вы точно хотите удалить статью: {{article.title}}</p>
+    <button type="submit">Да</button> <a href="{% url 'my_article_list' %}">Нет, вернуться в список статей</a>
+</form>
+</body>
+</html>

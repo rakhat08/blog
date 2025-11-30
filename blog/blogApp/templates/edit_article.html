@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить статью</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a; /* темный фон */
+            font-family: sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 500px;
+            background-color: #1e293b;
+            padding: 40px;
+            border-radius: 16px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        input, textarea {
+            width: 100%;
+            background-color: #0f172a;
+            border: none;
+            padding: 16px;
+            margin-top: 12px;
+            color: white;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        textarea {
+            height: 200px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            background-color: #3b82f6;
+            padding: 14px;
+            border: none;
+            font-size: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 20px;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+        }
+
+        label {
+            font-size: 16px;
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Изменить статью</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="id_title">Название статьи</label>
+        {{ form.title }}
+
+        <label for="id_text" style="margin-top:15px;">Текст статьи</label>
+        {{ form.text }}
+
+        <button type="submit">Сохранить изменения</button>
+    </form>
+</div>
+
+</body>
+</html>

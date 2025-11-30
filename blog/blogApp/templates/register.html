@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background: #0f1629;
+        color: white;
+    }
+
+    .container {
+        max-width: 450px;
+        padding: 40px 30px;
+        margin-left: 80px;
+        margin-top: 80px;
+        padding-left: 350px;
+    }
+
+    h1 {
+        font-size: 46px;
+        margin: 10px 0 20px;
+        font-weight: 700;
+        padding-left: 30px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        opacity: 0.8;
+    }
+
+    .subtitle a {
+        color: #3e8cff;
+        text-decoration: none;
+    }
+
+    .input-group {
+        margin-top: 25px;
+        display: flex;
+        gap: 14px;
+    }
+
+    .input-box {
+        background: #1c2337;
+        padding: 14px 18px;
+        border-radius: 12px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid transparent;
+        transition: 0.2s;
+        margin: 30px;
+    }
+
+    .input-box:hover, .input-box:focus-within {
+        border-color: #3e8cff;
+    }
+
+    label {
+        font-size: 12px;
+        opacity: 0.8;
+        margin-bottom: 4px;
+    }
+
+    input {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 15px;
+        outline: none;
+    }
+
+    .full {
+        width: 100%;
+    }
+
+    .buttons {
+        margin-top: 30px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .btn {
+        flex: 1;
+        padding: 14px;
+        border-radius: 14px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        font-weight: 600;
+        transition: 0.2s;
+        margin: 20px;
+    }
+
+    .btn-secondary {
+        background: #383f52;
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background: #4a566f;
+    }
+
+    .btn-primary {
+        background: #3e8cff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: #1b6ce0;
+    }
+      .already {
+    font-size: 16px;
+    color: #9aa0b8;
+    font-weight: 400;
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+
+.already a {
+    color: #4da3ff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.already a:hover {
+    text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<form method="POST">
+    {% csrf_token %}
+    <h1>Регистрация</h1>
+    <p class="already">
+    Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a>
+</p>
+
+    <div class="input-box full">
+        <label for="id_username">Username</label>
+        {{ form.username }}
+    </div>
+
+    <div class="input-box full">
+        <label for="id_password1">Password</label>
+        {{ form.password1 }}
+    </div>
+
+    <div class="input-box full">
+        <label for="id_password2">Confirm Password</label>
+        {{ form.password2 }}
+    </div>
+
+    <button class="btn btn-primary">Зарегистрироваться</button>
+
+</form>
+    </div>
+</body>
+</html>
