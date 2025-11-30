@@ -17,7 +17,7 @@ def my_article_list(request):
 
 def all_articles(request):
     articles = Article.objects.all()
-    return render(request, 'all_articles.html', {'articles': articles})
+    return render(request, 'index.html', {'articles': articles})
 
 def full_article(request, pk):
     article = get_object_or_404(Article, pk=pk)
